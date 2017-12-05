@@ -13,11 +13,18 @@
 
 
 Route::get('/', function () {
-    dd(\App\User::find(1)->articles());
+//    dd(\App\User::find(1)->articles());
+    dd(\App\User::has('articles')->get());
     //return \App\User::all()->articles();
 //    return \App\Article::all();
 });
 
+Route::get('/temp', function () {
+//    dd(\App\User::find(1)->articles());
+    dd(\App\User::doesntHave('articles')->get());
+    //return \App\User::all()->articles();
+//    return \App\Article::all();
+});
 //Route::get('/', function () {
 //    return view('welcome');
 //});
